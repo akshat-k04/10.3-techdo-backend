@@ -113,10 +113,12 @@ async function getdatta(req, res) {
         if (result) {
             let data = await authmdl.findOne({ email: email });
             if (data) {
-
-                res.json({
+                var lte = {
                     'name': data.name,
                     'email': data.email
+                }
+                res.json({
+                    'bol':lte
                 });
 
             }
